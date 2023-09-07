@@ -3,35 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <title>Test web</title>
-</head>
-<body>
     <style>
-        *{
+        * {
             margin: 0px;
             padding: 0px;
-
         }
-        ul{
+        ul {
             list-style-type: none;
         }
-        nav{
+        nav {
             background-color: #2980b9;
         }
-        #main-menu{
+        #main-menu {
             display: flex;
         }
-        nav #main-menu li a{
+        nav #main-menu li a {
             color: #fff;
             text-decoration: none;
             display: block;
             padding: 8px 15px;
         }
-        nav #main-menu li:hover a{
-            background: #c23616 ;
+        nav #main-menu li:hover a {
+            background: #c23616;
             transition: all 0.3s;
         }
         #toggle {
@@ -43,26 +39,21 @@
             font-size: 20px;
             cursor: pointer;
         }
-        @media screen and (max-width: 768px){
-            #main-menu{
+        @media screen and (max-width: 768px) {
+            #main-menu {
                 flex-direction: column;
                 text-align: center;
             }
-            #toggle{
+            #toggle {
                 display: block;
             }
-            nav{
+            nav {
                 display: none;
             }
         }
     </style>
-    <script>
-        $(document).ready(function(){
-            $('#toggle').click(function(){
-                $('nav').slideToggle();
-            })
-        })
-    </script>
+</head>
+<body>
     <div id="wrapper">
         <div id="header">
             <div id="toggle">
@@ -71,28 +62,26 @@
             <nav>
                 <ul id="main-menu">
                     <li>
-                        <a href="">Trang chủ</a>
+                        <a href="./documents/trang chủ.txt" target="_blank">Trang chủ</a>
                     </li>
                     <li>
-                        <a href="">Giới thiệu</a>
+                        <a href="./documents/giới thiệu.txt" target="_blank">Giới thiệu</a>
                     </li>
                     <li>
-                        <a href="">xem rích lăn</a>
+                        <a href="https://www.youtube.com/watch?v=mkEoOyZN_VM" target="_blank">xem tú sena đòi donate remix cực chill</a>
                     </li>
                     <li>
-                        <a href="">xem super idol</a>
+                        <a href="https://www.youtube.com/watch?v=8YiETR321X4" target="_blank">xem super idol remix cực chất</a>
                     </li>
                     <li>
-                        <a href="">xem ảnh</a>
+                        <a href="https://www.youtube.com/watch?v=w9kdJ7SIB6Q" target="_blank">xem video bomman đập bàn</a>
                     </li>
                     <li>
-                        <a href="">liên hệ</a>
+                        <a href="https://www.facebook.com/profile.php?id=100010321127522" target="_blank">liên hệ</a>
                     </li>
                 </ul>
             </nav>
         </div>
-        
-        
     </div>
     <div>
         <img src="./imagin/358460170_2007255962961755_4646367360774206001_n.jpg" height="200" width="200" />
@@ -108,27 +97,47 @@
         <div>
             <h3>Nhập thử đi</h3>
             <form>
-                <input type="text" id="input-text" placeholder="Viết gì đó ở đây nó sẽ hiển thị!"/>
+                <input type="text" id="input-text" placeholder="Viết gì đó ở đây nó sẽ hiển thị!" />
                 <button>Viết</button>
                 <p id="hidden-text" style="display: none;">Chữ bị ẩn.</p>
                 <button id="show-button">Hiển thị</button>
-
-                <div>
-                    <label for="beauty"><strong>Thằng chủ web có đẹp trai không?</strong></label>
-                    <select id="beauty">
-                        <option>Đương nhiên rồi</option>
-                        <option>Quá đẹp trai</option>
-                        <option>Quá chuẩn</option>
-                    </select>
-                </div>
+                
             </form>
         </div>
+        <div>
+            <h3>Câu hỏi:thằng chủ web có đẹp zai không?</h3>
+            <form id="trueFalseForm">
+                <input type="radio" id="trueOption" name="answer" value="true">
+                <label for="trueOption">juan</label>
+                <input type="radio" id="falseOption" name="answer" value="false">
+                <label for="falseOption">không cần chỉnh</label>
+                <button type="button" id="checkAnswerButton">Kiểm tra</button>
+                <p id="answerResult"></p>
+            </form>
+        </div>
+        
+        <script>
+            document.getElementById("checkAnswerButton").addEventListener("click", function() {
+                // Lấy giá trị của lựa chọn từ người dùng
+                var selectedAnswer = document.querySelector('input[name="answer"]:checked').value;
+        
+                // Kiểm tra câu trả lời
+                if (selectedAnswer === "true") {
+                    document.getElementById("answerResult").textContent = "đó là điểu hiển nhiên!";
+                } else if (selectedAnswer === "false") {
+                    document.getElementById("answerResult").textContent = "như đáp án!";
+                } else {
+                    document.getElementById("answerResult").textContent = "Vui lòng chọn một phương án.";
+                }
+            });
+        </script>
+        
         <footer>
             <h3>Nhìn thử đi</h3>
             <ul>
                 <li>Có điều bất ngờ ở dòng dưới</li>
                 <li>
-                    <p>ấn  <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener">thử</a> đi :v:</p>
+                    <p>ấn <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener">thử</a> đi :v:</p>
                     <!-- <video controls width="540" height="260">
                         <source src="./video/Rick Astley - Never Gonna Give You Up (Official Music Video).mp4" type="video/mp4"> -->
                     </video>
@@ -136,5 +145,38 @@
             </ul>
         </footer>
     </div>
+
+    <!-- Phần tính độ tuổi đã được bổ sung sau đây -->
+    <div id="ageCalculator">
+        <h2>Tính độ tuổi</h2>
+        <form id="ageCalculatorForm">
+            <label for="birthdate">Ngày tháng năm sinh:</label>
+            <input type="date" id="birthdate" required>
+            <button type="button" id="calculateButton">Tính độ tuổi</button>
+        </form>
+        <p id="result"></p>
+    </div>
+
+    <!-- Script đã được bổ sung sau đây -->
+    <script>
+        $(document).ready(function() {
+            $('#toggle').click(function() {
+                $('nav').slideToggle();
+            })
+
+            // Xử lý tính độ tuổi
+            $('#calculateButton').click(function() {
+                var birthdate = new Date($('#birthdate').val());
+                var currentDate = new Date();
+                var age = currentDate.getFullYear() - birthdate.getFullYear();
+
+                if (currentDate.getMonth() < birthdate.getMonth() || (currentDate.getMonth() === birthdate.getMonth() && currentDate.getDate() < birthdate.getDate())) {
+                    age--;
+                }
+
+                $('#result').html('Độ tuổi của bạn là: ' + age + ' tuổi.');
+            });
+        });
+    </script>
 </body>
 </html>
